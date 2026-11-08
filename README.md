@@ -85,3 +85,7 @@ docs/       README 样式图
 ```
 
 > 说明：Bloom / Breeze 两种模式的具体表现为按风格推断实现；性能约 4–6 万体素实例，桌面 GPU 流畅，低端设备可调低 `petals`。
+
+## License
+
+[MIT](LICENSE) © 2026 jianyunyi

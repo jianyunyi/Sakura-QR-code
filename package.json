@@ -1,6 +1,7 @@
 {
   "name": "sakura-qr-code",
   "version": "0.1.0",
+  "license": "MIT",
   "description": "3D voxel QR code that turns into a cherry-blossom tree (Three.js, React/Next.js ready)",
   "type": "module",
   "main": "src/sakura-qr-tree.js",
