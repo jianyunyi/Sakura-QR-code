@@ -1,0 +1,12 @@
+{
+  "name": "sakura-qr-code",
+  "version": "0.1.0",
+  "description": "3D voxel QR code that turns into a cherry-blossom tree (Three.js, React/Next.js ready)",
+  "type": "module",
+  "main": "src/sakura-qr-tree.js",
+  "types": "react/sakura-qr-tree.d.ts",
+  "files": ["src", "react", "dist"],
+  "peerDependencies": { "three": ">=0.160.0", "qrcode-generator": "^1.4.4", "react": ">=18" },
+  "peerDependenciesMeta": { "react": { "optional": true } },
+  "keywords": ["qrcode", "threejs", "voxel", "sakura", "react", "nextjs"]
+}
