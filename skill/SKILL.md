@@ -54,6 +54,10 @@ The container **must have a height** (the widget fills it: canvas on top, contro
 - Sway is a vertex-shader patch (`onBeforeCompile`) driven by `uSway` (spring .35 / bloom .45 / breeze 1.5).
 - Lighting: hemisphere + one shadow-casting directional light from the right (shadow falls left), `ShadowMaterial` floor.
 
+- Themes (day/dusk/night): tween hemisphere/sun colour+intensity+position, shadow colour/opacity, plate cream/pit/slab colours and a leaf/petal glow (night) over 0.9 s; UI colours are CSS variables switched by `data-theme`, backgrounds are cross-faded layers (night has a star layer).
+- Perf: `shadowMap.autoUpdate = false` and `needsUpdate` only while something moves; render loop pauses when offscreen/hidden (IntersectionObserver + `document.hidden`); adaptive quality steps (DPR -> 1.25 -> 1 + 1024 shadow map + 60% petals) after ~100 slow frames; `prefers-reduced-motion` shortens transitions and calms sway/petals.
+- Safety/a11y: user strings are set via DOM properties only; caption link only for http(s); canvas is focusable (Enter/Space toggle, arrows rotate); `destroy()` disposes geometries/materials and calls `forceContextLoss()`.
+
 ## Gotchas
 - Needs WebGL. `PCFSoftShadowMap` was removed in three r18x — the code uses `PCFShadowMap`.
 - ~40–60k tree instances: fine on GPUs; on software rendering (headless) animation runs slower than real time → use `seek()`/`snap()` for screenshots.
